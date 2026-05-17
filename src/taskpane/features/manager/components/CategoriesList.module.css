@@ -1,0 +1,84 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+}
+
+.content {
+  padding: var(--spacing-md);
+}
+
+.addBtn {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: var(--spacing-md);
+  transition: background-color 0.15s;
+}
+
+.addBtn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-primary);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 6px;
+}
+
+.itemName {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.itemActions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.editBtn {
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.15s;
+}
+
+.editBtn:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.deleteBtn {
+  color: var(--color-danger);
+  font-size: var(--font-size-xs);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.15s;
+}
+
+.deleteBtn:hover {
+  background-color: var(--color-danger-bg);
+}
+
+.empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+}
