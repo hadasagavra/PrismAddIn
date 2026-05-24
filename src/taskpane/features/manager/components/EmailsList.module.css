@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+}
+
+.content {
+  padding: var(--spacing-md);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  margin: 0 0 var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.categoryGroup {
+  border: 0.5px solid var(--color-border);
+  border-radius: 6px;
+  margin-bottom: var(--spacing-sm);
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px var(--spacing-md);
+  background-color: var(--color-bg-tertiary);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.categoryHeader:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.categoryHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.arrow {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.categoryName {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.badge {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.badgeEmpty {
+  background-color: var(--color-text-tertiary);
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.emailsList {
+  background-color: var(--color-bg-primary);
+}
+
+.noEmails {
+  padding: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.emailItem {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-top: 0.5px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.emailItem:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.emailSubject {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.emailSender {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.emailConfidence {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+}

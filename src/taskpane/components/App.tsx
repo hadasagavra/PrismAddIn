@@ -12,6 +12,9 @@ import AddManagerForm from '../features/manager/components/AddManagerForm';
 import UpdateManagerForm from '../features/manager/components/UpdateManagerForm';
 import EmailClassifier from '../features/manager/components/EmailClassifier';
 import ProtectedRoute from './ProtectedRoute';
+import AddTestEmailForm from '../features/manager/components/AddTestEmailForm';
+import EmailsList from '../features/manager/components/EmailsList';
+import ReclassifyEmail from '../features/manager/components/ReclassifyEmail';
 import '../styles/variables.css';
 
 const App: React.FC = () => (
@@ -27,7 +30,10 @@ const App: React.FC = () => (
           <Route path="/categories/edit/:id" element={<ProtectedRoute><UpdateCategoryForm /></ProtectedRoute>} />
           <Route path="/managers/add" element={<ProtectedRoute><AddManagerForm /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><UpdateManagerForm /></ProtectedRoute>} />
-          <Route path="/classify" element={<ProtectedRoute><EmailClassifier /></ProtectedRoute>} />
+       {/* <Route path="/classify" element={<ProtectedRoute><EmailClassifier /></ProtectedRoute>} />*/ }  
+          <Route path="/test-email" element={<ProtectedRoute><AddTestEmailForm /></ProtectedRoute>} />
+          <Route path="/emails" element={<ProtectedRoute><EmailsList /></ProtectedRoute>} />
+          <Route path="/emails/:id/reclassify" element={<ProtectedRoute><ReclassifyEmail /></ProtectedRoute>} />
 
         </Routes>
       </MemoryRouter>

@@ -60,3 +60,16 @@ export const changePasswordApi = async (
 ): Promise<void> => {
   await apiClient.patch(`/managers/${id}/change-password`, data);
 };
+export const addEmailApi = async (data: {
+  subject: string;
+  content: string;
+  senderEmail: string;
+}): Promise<Email> => {
+  const response = await apiClient.post<Email>('/emailrequests', data);
+  return response.data;
+};
+
+export const getEmailByIdApi = async (id: number): Promise<Email> => {
+  const response = await apiClient.get<Email>(`/emailrequests/${id}`);
+  return response.data;
+};
