@@ -48,12 +48,16 @@ const managerSlice = createSlice({
     setLoading(state, { payload }: PayloadAction<boolean>) {
       state.loading = payload;
     },
+    removeManagerFromState(state, { payload }: PayloadAction<number>) {
+   state.managers = state.managers.filter(m => m.id !== payload);
+},
   },
 });
 
+
 export const {
   setCategories, addCategoryToState, updateCategoryInState, removeCategoryFromState,
-  setManagers, addManagerToState, updateManagerInState,
+  setManagers, addManagerToState, updateManagerInState,  removeManagerFromState,
   setEmails, setLoading,
 } = managerSlice.actions;
 

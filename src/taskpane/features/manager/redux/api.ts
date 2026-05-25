@@ -73,3 +73,7 @@ export const getEmailByIdApi = async (id: number): Promise<Email> => {
   const response = await apiClient.get<Email>(`/emailrequests/${id}`);
   return response.data;
 };
+
+export const deleteManagerApi = async (id: number): Promise<void> => {
+  await apiClient.delete(`/managers/${id}`);
+};

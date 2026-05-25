@@ -126,3 +126,11 @@
   font-size: var(--font-size-sm);
   text-align: center;
 }
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}

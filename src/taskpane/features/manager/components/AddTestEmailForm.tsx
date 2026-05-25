@@ -103,7 +103,7 @@ const AddTestEmailForm = () => {
 
           {result && (
             <div className={styles.success}>
-              ✓ Email classified as <strong>{result.category}</strong> (confidence: {result.confidence}%)
+              ✓ Email classified as <strong>{result.category}</strong> 
             </div>
           )}
         </form>

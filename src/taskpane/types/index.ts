@@ -5,6 +5,7 @@ export interface Manager {
   email: string;
   phoneNumber?: string;
   isActive: boolean;
+  isSuperAdmin: boolean; 
   lastLoginAt?: string;
 }
 
@@ -15,6 +16,7 @@ export interface CreateManagerRequest {
   email: string;
   password: string;
   phoneNumber?: string;
+  isSuperAdmin: boolean; 
 }
 
 // עדכון פרטי מנהל — תואם ל-UpdateManagerDto
@@ -59,15 +61,14 @@ export interface LoginRequest {
   password: string;
 }
 
-// תגובת שרת בהתחברות — תואם ל-AuthResponseDto
 export interface AuthResponse {
   managerId: number;
   name: string;
   email: string;
+  isSuperAdmin: boolean;
   accessToken: string;
   refreshToken: string;
 }
-
 // תיקון סיווג
 export interface ClassifyEmailRequest {
   categoryId: number;

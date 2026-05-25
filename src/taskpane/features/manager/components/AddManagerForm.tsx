@@ -9,20 +9,24 @@ import styles from './Forms.module.css';
 const AddManagerForm = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  
+
   const [formData, setFormData] = useState({
     name: '',
     identityNumber: '',
     email: '',
     password: '',
     phoneNumber: '',
+    isSuperAdmin: false,
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -46,7 +50,7 @@ const AddManagerForm = () => {
       <div className={styles.content}>
         <h2 className={styles.formTitle}>New manager</h2>
 
-       <form onSubmit={handleSubmit} autoComplete="off">
+        <form onSubmit={handleSubmit} autoComplete="off">
           <div className={styles.field}>
             <label htmlFor="mgr-name" className={styles.label}>Name *</label>
             <input
@@ -114,6 +118,19 @@ const AddManagerForm = () => {
               value={formData.phoneNumber}
               onChange={handleChange}
             />
+          </div>
+
+          <div className={styles.field}>
+            <label htmlFor="mgr-super" className={styles.checkboxLabel}>
+              <input
+                id="mgr-super"
+                name="isSuperAdmin"
+                type="checkbox"
+                checked={formData.isSuperAdmin}
+                onChange={handleChange}
+              />
+              <span>Super Admin</span>
+            </label>
           </div>
 
           {error && <div className={styles.error} role="alert">{error}</div>}

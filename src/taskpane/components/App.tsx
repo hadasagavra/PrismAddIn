@@ -11,6 +11,7 @@ import UpdateCategoryForm from '../features/manager/components/UpdateCategoryFor
 import AddManagerForm from '../features/manager/components/AddManagerForm';
 import UpdateManagerForm from '../features/manager/components/UpdateManagerForm';
 import EmailClassifier from '../features/manager/components/EmailClassifier';
+import ManagersList from '../features/manager/components/ManagersList';
 import ProtectedRoute from './ProtectedRoute';
 import AddTestEmailForm from '../features/manager/components/AddTestEmailForm';
 import EmailsList from '../features/manager/components/EmailsList';
@@ -25,6 +26,7 @@ const App: React.FC = () => (
           <Route path="/login" element={<LoginForm />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/managers" element={<ProtectedRoute><ManagersList /></ProtectedRoute>} />
           <Route path="/categories" element={<ProtectedRoute><CategoriesList /></ProtectedRoute>} />
           <Route path="/categories/add" element={<ProtectedRoute><AddCategoryForm /></ProtectedRoute>} />
           <Route path="/categories/edit/:id" element={<ProtectedRoute><UpdateCategoryForm /></ProtectedRoute>} />

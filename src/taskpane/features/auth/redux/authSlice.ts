@@ -2,16 +2,21 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthResponse } from '../../../types';
 
 interface AuthState {
-  manager: { id: number; name: string; email: string } | null;
+  manager: {
+    id: number;
+    name: string;
+    email: string;
+    isSuperAdmin: boolean;
+  } | null;
   accessToken: string | null;
   isAuthenticated: boolean;
 }
 
-const initialState: AuthState = {
+const initialState: AuthState = {                          // ← שונה: : במקום satisfies
   manager: null,
   accessToken: localStorage.getItem('accessToken'),
   isAuthenticated: !!localStorage.getItem('accessToken'),
-} satisfies AuthState;
+};                                                          // ← בלי satisfies בסוף
 
 const authSlice = createSlice({
   name: 'auth',
@@ -22,6 +27,7 @@ const authSlice = createSlice({
         id: payload.managerId,
         name: payload.name,
         email: payload.email,
+        isSuperAdmin: payload.isSuperAdmin,
       };
       state.accessToken = payload.accessToken;
       state.isAuthenticated = true;

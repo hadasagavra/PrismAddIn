@@ -43,6 +43,24 @@ const Navbar = () => {
         >
           Managers
         </button>
+        <button
+  className={`${styles.tab} ${isActive('/emails') ? styles.tabActive : ''}`}
+  onClick={() => navigate('/emails')}
+>
+  Emails
+</button>
+<button
+  className={`${styles.tab} ${isActive('/test-email') ? styles.tabActive : ''}`}
+  onClick={() => navigate('/test-email')}
+>
+  Test
+</button>
+<button
+  className={`${styles.tab} ${isActive('/managers') ? styles.tabActive : ''}`}
+  onClick={() => navigate('/managers')}
+>
+  Managers
+</button>
       </nav>
     </>
   );
